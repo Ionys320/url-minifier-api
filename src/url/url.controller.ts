@@ -36,7 +36,7 @@ export class UrlController {
             if (redirectTo.includes('?')) redirectTo += '&';
             else redirectTo += '?';
 
-            redirectTo += `shortenerCode=${item.minified}}`;
+            redirectTo += `shortenerCode=${item.minified}`;
         }
 
         return redirectTo;
