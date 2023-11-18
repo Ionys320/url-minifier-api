@@ -31,6 +31,14 @@ export class UrlController {
 
         this.urlService.addVisit(item);
 
+        let redirectTo = item.base;
+        if (redirectTo.includes('streamrunners.fr')) {
+            if (redirectTo.includes('?')) redirectTo += '&';
+            else redirectTo += '?';
+
+            redirectTo += `shortenerCode=${item.minified}}`;
+        }
+
         return item.base;
     }
 
