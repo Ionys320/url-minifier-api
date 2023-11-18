@@ -39,7 +39,7 @@ export class UrlController {
             redirectTo += `shortenerCode=${item.minified}}`;
         }
 
-        return item.base;
+        return redirectTo;
     }
 
     @UseGuards(JwtAuthGuard)
