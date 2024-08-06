@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UrlEntity } from 'src/entities/url.entity';
 import { UrlBody } from 'src/interfaces/bodies/url.body';
@@ -27,7 +27,7 @@ export class UrlService {
         url.tags = data.tags;
 
         url.base = data.base;
-        url.minified = random();
+        url.minified = data.minified ?? random();
 
         return this.urlRepository.save(url);
     }
@@ -38,6 +38,7 @@ export class UrlService {
             tags: data.tags,
 
             base: data.base,
+            minified: data.minified
         });
     }
 
