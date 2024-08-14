@@ -27,7 +27,7 @@ export class UrlService {
         url.tags = data.tags;
 
         url.base = data.base;
-        url.minified = data.minified ?? random();
+        url.minified = data.minified || random();
 
         return this.urlRepository.save(url);
     }
